@@ -12,8 +12,11 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.2.0",
+    "@pinia/nuxt": "^0.7.0",
     "axios": "^1.7.8",
     "nuxt": "^3.14.1592",
+    "pinia": "^2.2.6",
+    "radix-vue": "^1.9.10",
     "swiper": "^11.1.15",
     "vue": "latest",
     "vue-router": "latest",
