@@ -6,12 +6,16 @@
         :space-between="20"
         :breakpoints="breakpoints"
         :loop="true"
-        navigation
+        :navigation="{
+          nextEl: '.custom-next',
+          prevEl: '.custom-prev',
+        }"
         :autoplay="autoplayConfig"
       >
-
+        <div class="custom-next swiper-button-next"></div>
+        <div class="custom-prev swiper-button-prev"></div>
         <SwiperSlide v-for="coin in coins" :key="coin.id">
-            <div class="border border-zinc-300 bg-white rounded-xl p-5 flex items-center justify-between">
+            <div class="border border-zinc-300 bg-white max-w-4xl rounded-xl py-5 px-7 flex items-center justify-between">
                 <div class="flex items-center gap-x-2">
                     <img :src="coin.image" :alt="coin.name" class="size-8">
                     <h6>{{coin.symbol}}</h6>
@@ -66,16 +70,17 @@ import { comma } from '~/lib/utils/comma';
   /* استایل پیش‌فرض */
   .swiper-button-next,
   .swiper-button-prev {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
+    z-index: 40;
   }
   
   .swiper-button-next:hover,
@@ -86,15 +91,16 @@ import { comma } from '~/lib/utils/comma';
   /* تغییر استایل شخصی‌سازی‌شده */
   .custom-next::after,
   .custom-prev::after {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: white;
   }
   
   .custom-next {
-    right: -20px;
+    right: 0px;
+
   }
   
   .custom-prev {
-    left: -20px;
+    left: -0px;
   }
   </style>
